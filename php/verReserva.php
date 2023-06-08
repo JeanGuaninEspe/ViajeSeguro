@@ -23,7 +23,7 @@ foreach ($cursor as $document) {
 }
 echo "</table>";
 
-echo "<br><br><a href='../html/pasajero.html' id='volver'>Volver</a>";
+echo "<br><br><a href='../php/pasajero.php' id='volver'>Volver</a>";
 echo '<style>
    table{
                border-collapse: collapse;

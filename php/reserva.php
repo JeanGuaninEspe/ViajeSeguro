@@ -14,8 +14,8 @@ if ($nombre != "" && $apellido != "" && $correo != "" && $fecha != "" && $fecha 
     $bulk->insert(['nombre' => $nombre, 'apellido' => $apellido, 'correo' => $correo, 'fecha' => $fecha, 'username' => $usuario]);
     $mongo->executeBulkWrite('ViajeSeguro.Reservas', $bulk);
     echo "<script>alert('Reserva realizada con exito')</script>";
-    echo "<script>window.location.replace('../html/pasajero.html')</script>";
+    echo "<script>window.location.replace('../php/pasajero.php')</script>";
 } else {
     echo "<script>alert('Error al realizar la reserva')</script>";
-    echo "<script>window.location.replace('../html/reserva.html')</script>";
+    echo "<script>window.location.replace('../php/pasajero.php')</script>";
 }

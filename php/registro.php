@@ -16,9 +16,11 @@ if($cursor->toArray() == null){
     $bulk = new MongoDB\Driver\BulkWrite;
     $bulk->insert(['nombre' => $nombre, 'apellido' => $apellido, 'username' => $usuario, 'password' => $pass, 'email' => $email]);
     $mongo->executeBulkWrite('ViajeSeguro.Pasajeros', $bulk);
-    header("Location: ../html/login.html");
+    echo "<script>alert('Usuario registrado exitosamente');</script>";
+    echo "<script>window.location.replace('../html/login.html');</script>";
     exit;
 }
 //si el usuario ya existe se redirige a la pagina de registro y si se registra un nuevo usuario se redirige a la pagina de login
-header("Location: ../html/registro.html");
+echo "<script>alert('El usuario ya existe o no se pudo registrar, intente nuevamente');</script>";
+echo "<script>window.location.replace('../html/registro.html');</script>";
 exit;

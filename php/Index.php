@@ -19,7 +19,7 @@ $cursor2 = $mongo->executeQuery('ViajeSeguro.Admins', $busqueda2);
 
 //si el usuario es un pasajero se redirige a la pagina de pasajero y si es admin a la pagina de admin
 foreach ($cursor as $document) {
-    header("Location: ../html/pasajero.html");
+    header("Location: ../php/pasajero.php");
     exit;
 }
 foreach ($cursor2 as $document) {

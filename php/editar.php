@@ -14,7 +14,9 @@ foreach ($cursor as $document) {
     echo "<input type='text' name='username' value='" . $document->username . "'><br>";
     echo "<input type='submit' value='Actualizar'>";
     echo "</form>";
-    echo "<a href='../html/pasajero.html'>Volver</a>";
+    echo "<div>";
+    echo "<a href='../php/pasajero.php' id='volver'>Volver</a>";
+    echo "</div>";
 }
 //tomar los datos del formulario y actualizarlos en la coleccion pasajeros
 if (isset($_POST['nombre'])) {
@@ -26,7 +28,7 @@ if (isset($_POST['nombre'])) {
     $bulk->update(['username' => $usuario], ['$set' => ['nombre' => $nombre, 'apellido' => $apellido, 'email' => $correo, 'username' => $username]]);
     $mongo->executeBulkWrite('ViajeSeguro.Pasajeros', $bulk);
     echo "<script>alert('Datos actualizados con exito')</script>";
-    echo "<script>window.location.replace('../html/pasajero.html')</script>";
+    echo "<script>window.location.replace('../php/pasajero.php')</script>";
 }
 
 echo'<style>
@@ -92,6 +94,10 @@ background-color: #588c7e;
     background-color: #f2f2f2;
     color: #588c7e;
     
+    }
+    
+    #volver{
+    margin-left: 45%;
     }
 </style>'
 ?>
